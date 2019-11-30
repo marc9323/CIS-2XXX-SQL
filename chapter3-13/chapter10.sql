@@ -1,0 +1,124 @@
+-- Marc D. Holman
+-- CIS 2721 : SQL I – NET
+-- 10 / 30 / 2019
+-- Chapter 10 Homework
+
+
+-- Multiple Choice:
+
+-- 1 c
+-- 2 c
+-- 3 b
+-- 4 b
+-- 5 f
+-- 6 d
+-- 7 d
+-- 8 d
+-- 9 a
+-- 10 b
+-- 11 a
+-- 12 d
+-- 13 c and d
+-- 14 a
+-- 15 c – INITIALCAP is not a function.  INITCAP, however, is.
+-- 16 c
+-- 17 d
+-- 18 c
+-- 19 b
+-- 20 c
+
+
+-- Hands On:
+
+-- 2.)
+
+SELECT customer#, NVL2(referred, 'REFERRED', 'NOT REFERRED')
+FROM customers;
+
+-- OUTPUT:
+
+-- CUSTOMER#,"NVL2(REFERRED,'REFERRED','NOTREFERRED')"	
+-- 1001,"NOT	REFERRED"
+-- 1002,"NOT	REFERRED"
+-- 1003,"NOT	REFERRED"
+-- 1004,"NOT	REFERRED"
+-- 1005,"NOT	REFERRED"
+-- 1006,"NOT	REFERRED"
+-- 1007,"REFERRED"	
+-- 1008,"NOT	REFERRED"
+-- 1009,"REFERRED"	
+-- 1010,"NOT	REFERRED"
+-- 1011,"NOT	REFERRED"
+-- 1012,"NOT	REFERRED"
+-- 1013,"REFERRED"	
+-- 1014,"NOT	REFERRED"
+-- 1015,"NOT	REFERRED"
+-- 1016,"REFERRED"	
+-- 1017,"NOT	REFERRED"
+-- 1018,"NOT	REFERRED"
+-- 1019,"REFERRED"	
+-- 1020,"NOT	REFERRED"
+
+
+-- 5.)
+
+SELECT TO_CHAR(CURRENT_DATE, 'DAY, HH:MI:SS') as CURRENT_DAY FROM dual;
+
+-- OUTPUT:
+-- CURRENT_DAY
+-- WEDNESDAY, 01:36:41
+
+-- 6.)
+
+SELECT title, LPAD(cost, 12, '*') 
+FROM books;
+
+-- OUTPUT:
+
+-- TITLE,"LPAD(COST,12,'*')"
+-- BODYBUILD IN 10 MINUTES A DAY,"*******18.75"
+-- REVENGE OF MICKEY,"********14.2"
+-- BUILDING A CAR WITH TOOTHPICKS,"********37.8"
+-- DATABASE IMPLEMENTATION,"********31.4"
+-- COOKING WITH MUSHROOMS,"********12.5"
+-- HOLY GRAIL OF ORACLE,"*******47.25"
+-- HANDCRANKED COMPUTERS,"********21.8"
+-- E-BUSINESS THE EASY WAY,"********37.9"
+-- PAINLESS CHILD-REARING,"**********48"
+-- THE WOK WAY TO COOK,"**********19"
+-- BIG BEAR AND LITTLE DOVE,"********5.32"
+-- HOW TO GET FASTER PIZZA,"*******17.85"
+-- HOW TO MANAGE THE MANAGER,"********15.4"
+-- SHORTEST POEMS,"*******21.85"
+
+
+-- 10.)
+
+SELECT customer#, zip, SUBSTR(zip, 3, 2), INSTR(customer#, 3, 1)
+FROM customers;
+
+-- OUTPUT:
+
+-- CUSTOMER#,"ZIP","SUBSTR(ZIP,3,2)","INSTR(CUSTOMER#,3,1)"
+-- 1001,"32328","32",0
+-- 1002,"90404","40",0
+-- 1003,"32306","30",4
+-- 1004,"83707","70",0
+-- 1005,"98115","11",0
+-- 1006,"12211","21",0
+-- 1007,"78710","71",0
+-- 1008,"82003","00",0
+-- 1009,"91510","51",0
+-- 1010,"30314","31",0
+-- 1011,"60606","60",0
+-- 1012,"02110","11",0
+-- 1013,"34711","71",4
+-- 1014,"82414","41",0
+-- 1015,"33111","11",0
+-- 1016,"91508","50",0
+-- 1017,"49006","00",0
+-- 1018,"31206","20",0
+-- 1019,"07962","96",0
+-- 1020,"08607","60",0
+
+
